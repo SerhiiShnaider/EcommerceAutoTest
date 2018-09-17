@@ -1,8 +1,8 @@
-package com.gmail.shnapi007.config;
+package com.gmail.shnapi007.core;
 
 import com.gmail.shnapi007.common.Config;
-import com.gmail.shnapi007.config.factory.DriverData;
-import com.gmail.shnapi007.config.factory.DriverFactory;
+import com.gmail.shnapi007.core.factory.DriverData;
+import com.gmail.shnapi007.core.factory.DriverFactory;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 

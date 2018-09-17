@@ -1,6 +1,6 @@
-package com.gmail.shnapi007.config.factory.impl;
+package com.gmail.shnapi007.core.factory.impl;
 
-import com.gmail.shnapi007.config.factory.DriverData;
+import com.gmail.shnapi007.core.factory.DriverData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 

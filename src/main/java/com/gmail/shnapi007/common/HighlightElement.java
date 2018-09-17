@@ -1,6 +1,6 @@
 package com.gmail.shnapi007.common;
 
-import com.gmail.shnapi007.config.DriverManager;
+import com.gmail.shnapi007.core.DriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 

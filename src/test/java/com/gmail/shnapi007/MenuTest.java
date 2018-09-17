@@ -3,7 +3,7 @@ package com.gmail.shnapi007;
 import com.gmail.shnapi007.bo.HeaderBO;
 import com.gmail.shnapi007.bo.LogInPageBO;
 import com.gmail.shnapi007.bo.ProductPageBO;
-import com.gmail.shnapi007.config.DriverManager;
+import com.gmail.shnapi007.core.DriverManager;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
