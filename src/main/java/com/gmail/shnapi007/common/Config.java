@@ -3,8 +3,11 @@ package com.gmail.shnapi007.common;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
+import org.apache.log4j.Logger;
 
 public class Config {
+
+  protected final static Logger logger = Logger.getLogger(Config.class);
 
   public static Properties config;
 
@@ -23,7 +26,7 @@ public class Config {
         propertyValue = config.getProperty(key);
       }
     } catch (Exception e) {
-
+      logger.error("Project property reading error");
     }
     return propertyValue;
   }

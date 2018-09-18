@@ -8,17 +8,17 @@
   <artifactId>EcommerceAutoTest</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-    <properties>
+  <properties>
 
-      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
-      <aspectj.version>1.8.10</aspectj.version>
-      <allure-testng.version>2.6.0</allure-testng.version>
-      <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
-      <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
-      
-    </properties>
-  
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
+    <aspectj.version>1.8.10</aspectj.version>
+    <allure-testng.version>2.6.0</allure-testng.version>
+    <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+    <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
+
+  </properties>
+
   <build>
     <plugins>
 
@@ -63,7 +63,9 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${maven-surefire-plugin.version}</version>
         <configuration>
-          <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
+          <argLine>
+            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+          </argLine>
           <systemProperties>
             <property>
               <name>allure.results.directory</name>
@@ -127,6 +129,5 @@
     </dependency>
 
   </dependencies>
-
 
 </project>
