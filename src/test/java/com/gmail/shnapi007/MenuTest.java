@@ -1,30 +1,38 @@
 package com.gmail.shnapi007;
 
+import com.gmail.shnapi007.bo.HeaderBO;
+import com.gmail.shnapi007.bo.ProductPageBO;
+import com.gmail.shnapi007.core.DriverManager;
 import io.qameta.allure.Description;
-import io.qameta.allure.Story;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class MenuTest {
+public class MenuTest extends BaseTest {
 
-  @Test
-  @Description(value = "test Test")
-  @Story(value = "AYEN-1488")
-  public void acceptTest() {
-    Assert.assertTrue(4 + 4 == 8, "accept");
+  private HeaderBO headerBo;
+  private ProductPageBO productPageBO;
+
+  @BeforeMethod
+  public void setUp() {
+    headerBo = new HeaderBO();
+    productPageBO = new ProductPageBO();
   }
 
   @Test
-  @Description(value = "test Test")
-  @Story(value = "AYEN-1488")
-  public void falseTest() {
-    Assert.assertTrue(4 + 4 == 7, "false");
+  @Description(value = "Go to all products page test")
+  public void goToAllProductsTest() {
+    driver.get("http://store.demoqa.com/");
+    headerBo.clickAllProduct();
+    String headerTitle = productPageBO.pageHeaderValue();
+    asserter
+        .assertEquals(headerTitle, "Product Category", "Wrong page title", "Page title is correct");
+
   }
 
   @AfterMethod
   public void after() {
-    //  DriverManager.close();
+    DriverManager.close();
   }
 
 }

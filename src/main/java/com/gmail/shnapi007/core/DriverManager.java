@@ -28,7 +28,6 @@ public class DriverManager {
   }
 
   public static WebDriver getDriver() {
-    logger.info("Return driver");
     return instance.get();
   }
 
