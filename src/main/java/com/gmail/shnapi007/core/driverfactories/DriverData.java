@@ -1,4 +1,4 @@
-package com.gmail.shnapi007.core.factory;
+package com.gmail.shnapi007.core.driverfactories;
 
 import org.openqa.selenium.WebDriver;
 

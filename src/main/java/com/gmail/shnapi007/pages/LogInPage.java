@@ -1,5 +1,8 @@
 package com.gmail.shnapi007.pages;
 
+import com.gmail.shnapi007.core.webelements.Button;
+import com.gmail.shnapi007.core.webelements.CheckBox;
+import com.gmail.shnapi007.core.pagefactory.CustomFieldDecorator;
 import com.gmail.shnapi007.pages.base.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,10 +18,10 @@ public class LogInPage extends BasePage {
   private WebElement userPassword;
 
   @FindBy(how = How.ID, using = "rememberme")
-  private WebElement rememberMe;
+  private CheckBox rememberMe;
 
   @FindBy(how = How.ID, using = "wp-submit")
-  private WebElement loginButton;
+  private Button loginButton;
 
   @FindBy(how = How.LINK_TEXT, using = "Register")
   private WebElement registerPage;
@@ -30,7 +33,7 @@ public class LogInPage extends BasePage {
   private WebElement backToStore;
 
   public LogInPage() {
-    PageFactory.initElements(driver, this);
+    PageFactory.initElements(new CustomFieldDecorator(driver), this);
   }
 
   public void typeLogin(String login) {
@@ -42,7 +45,7 @@ public class LogInPage extends BasePage {
   }
 
   public void rememberme() {
-    rememberMe.click();
+    rememberMe.setChecked(true);
   }
 
   public void logIn() {
@@ -69,7 +72,7 @@ public class LogInPage extends BasePage {
     return userPassword;
   }
 
-  public WebElement getLoginButton() {
+  public Button getLoginButton() {
     return loginButton;
   }
 
@@ -81,7 +84,7 @@ public class LogInPage extends BasePage {
     return backToStore;
   }
 
-  public WebElement getRememberMe() {
+  public CheckBox getRememberMe() {
     return rememberMe;
   }
 

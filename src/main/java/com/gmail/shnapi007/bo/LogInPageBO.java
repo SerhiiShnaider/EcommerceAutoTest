@@ -24,7 +24,7 @@ public class LogInPageBO extends BaseBO {
     logInPage.rememberme();
   }
 
-  public void logIn() {
+  public void logInButtonClick() {
     logger.info("Logining");
     highlight(logInPage.getLoginButton());
     logInPage.logIn();

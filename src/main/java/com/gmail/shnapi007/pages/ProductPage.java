@@ -1,5 +1,6 @@
 package com.gmail.shnapi007.pages;
 
+import com.gmail.shnapi007.core.pagefactory.CustomFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -16,12 +17,12 @@ public class ProductPage extends MetaPage {
   @FindBy(how = How.CLASS_NAME, using = "default")
   private WebElement list;
 
-  public String getPageHeaderValue() {
-    return pageHeader.getText();
+  public ProductPage() {
+    PageFactory.initElements(new CustomFieldDecorator(driver), this);
   }
 
-  public ProductPage() {
-    PageFactory.initElements(driver, this);
+  public String getPageHeaderValue() {
+    return pageHeader.getText();
   }
 
   public void switchToGrid() {
@@ -43,6 +44,5 @@ public class ProductPage extends MetaPage {
   public WebElement getList() {
     return list;
   }
-
 
 }

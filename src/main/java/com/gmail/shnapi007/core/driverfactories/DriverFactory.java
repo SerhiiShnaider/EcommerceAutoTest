@@ -1,8 +1,8 @@
-package com.gmail.shnapi007.core.factory;
+package com.gmail.shnapi007.core.driverfactories;
 
-import com.gmail.shnapi007.core.factory.impl.ChromeDriverData;
-import com.gmail.shnapi007.core.factory.impl.FirefoxDriverData;
-import com.gmail.shnapi007.core.factory.impl.InternetExplorerDriverData;
+import com.gmail.shnapi007.core.driverfactories.impl.ChromeDriverData;
+import com.gmail.shnapi007.core.driverfactories.impl.FirefoxDriverData;
+import com.gmail.shnapi007.core.driverfactories.impl.InternetExplorerDriverData;
 
 public class DriverFactory {
 

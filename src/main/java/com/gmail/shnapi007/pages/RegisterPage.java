@@ -1,5 +1,7 @@
 package com.gmail.shnapi007.pages;
 
+import com.gmail.shnapi007.core.pagefactory.CustomFieldDecorator;
+import com.gmail.shnapi007.core.webelements.Button;
 import com.gmail.shnapi007.pages.base.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,7 +17,7 @@ public class RegisterPage extends BasePage {
   private WebElement userEmail;
 
   @FindBy(how = How.ID, using = "wp-submit")
-  private WebElement registerButton;
+  private Button registerButton;
 
   @FindBy(how = How.LINK_TEXT, using = "Log in")
   private WebElement logIn;
@@ -27,7 +29,7 @@ public class RegisterPage extends BasePage {
   private WebElement backToStore;
 
   public RegisterPage() {
-    PageFactory.initElements(driver, this);
+    PageFactory.initElements( new CustomFieldDecorator(driver), this);
   }
 
   public void typeLogin(String login) {
@@ -62,7 +64,7 @@ public class RegisterPage extends BasePage {
     return userEmail;
   }
 
-  public WebElement getRegisterButton() {
+  public Button getRegisterButton() {
     return registerButton;
   }
 

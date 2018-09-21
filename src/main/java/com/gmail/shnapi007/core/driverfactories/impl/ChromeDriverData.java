@@ -1,4 +1,4 @@
-package com.gmail.shnapi007.core.factory.impl;
+package com.gmail.shnapi007.core.driverfactories.impl;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
