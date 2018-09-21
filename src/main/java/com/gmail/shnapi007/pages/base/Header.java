@@ -8,23 +8,22 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 public class Header extends BasePage {
-  Actions actionBuilder = new Actions(driver);
 
   // MENU
 
-  @FindBy(how = How.LINK_TEXT, using = "Home")
+  @FindBy(how = How.ID, using = "menu-item-15")
   private WebElement home;
 
-  @FindBy(how = How.LINK_TEXT, using = "Product Category")
+  @FindBy(how = How.ID, using = "menu-item-33")
   private WebElement productCategory;
 
-  @FindBy(how = How.LINK_TEXT, using = "All Product")
+  @FindBy(how = How.ID, using = "menu-item-72")
   private WebElement allProduct;
 
   @FindBy(how = How.LINK_TEXT, using = "Checkout")
   private WebElement checkout;
 
-  @FindBy(how = How.LINK_TEXT, using = "My Account")
+  @FindBy(how = How.XPATH, using = "//*[@id='account']/a")
   private WebElement myAccount;
 
   @FindBy(how = How.NAME, using = "s")
@@ -32,22 +31,22 @@ public class Header extends BasePage {
 
   // SUB-MENU
 
-  @FindBy(how = How.LINK_TEXT, using = "Accessories")
+  @FindBy(how = How.ID, using = "menu-item-34")
   private WebElement accessories;
 
-  @FindBy(how = How.LINK_TEXT, using = "iMacs")
+  @FindBy(how = How.ID, using = "menu-item-35")
   private WebElement iMacs;
 
-  @FindBy(how = How.LINK_TEXT, using = "iPads")
+  @FindBy(how = How.ID, using = "menu-item-36")
   private WebElement iPads;
 
-  @FindBy(how = How.LINK_TEXT, using = "iPhones")
+  @FindBy(how = How.ID, using = "menu-item-37")
   private WebElement iPhones;
 
-  @FindBy(how = How.LINK_TEXT, using = "iPods")
+  @FindBy(how = How.ID, using = "menu-item-38")
   private WebElement iPods;
 
-  @FindBy(how = How.LINK_TEXT, using = "MacBooks")
+  @FindBy(how = How.ID, using = "menu-item-39")
   private WebElement macBooks;
 
   public Header() {

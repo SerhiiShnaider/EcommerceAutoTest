@@ -34,7 +34,10 @@ public class DriverManager {
   public static void close() {
     logger.info("Close driver");
     instance.get().close();
-    instance.get().quit();
+    if (DriverManager.getDriver() != null) {
+      instance.get().quit();
+    }
+    instance.remove();
   }
 }
 
