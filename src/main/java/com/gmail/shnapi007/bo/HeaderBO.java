@@ -32,7 +32,7 @@ public class HeaderBO extends BaseBO {
 
   public void clickCheckout() {
     logger.info("Clicking checkout");
-    highlight(header.getMyAccount());
+    highlight(header.getCheckout());
     header.checkout();
   }
 

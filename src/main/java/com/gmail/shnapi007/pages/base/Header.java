@@ -20,7 +20,7 @@ public class Header extends BasePage {
   @FindBy(how = How.ID, using = "menu-item-72")
   private WebElement allProduct;
 
-  @FindBy(how = How.LINK_TEXT, using = "Checkout")
+  @FindBy(how = How.ID, using = "header_cart")
   private WebElement checkout;
 
   @FindBy(how = How.XPATH, using = "//*[@id='account']/a")

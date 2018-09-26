@@ -127,11 +127,4 @@ public class HeaderTest extends BaseTest {
         "User name url is correct");
 
   }
-
-  @AfterMethod
-  public void afterMethod() {
-    DriverManager.close();
-  }
-
-
 }

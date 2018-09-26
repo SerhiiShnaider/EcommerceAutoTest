@@ -1,6 +1,8 @@
 package com.gmail.shnapi007.bo;
 
+import com.gmail.shnapi007.core.webelements.Product;
 import com.gmail.shnapi007.pages.ProductPage;
+import java.util.List;
 
 public class ProductPageBO extends BaseBO {
 
@@ -34,6 +36,10 @@ public class ProductPageBO extends BaseBO {
     logger.info("Click on log in");
     highlight(productPage.getLogIn());
     productPage.logIn();
+  }
+
+  public List<Product> getProducts() {
+    return productPage.getProducts();
   }
 
 }
