@@ -13,16 +13,15 @@ public class CheckoutProduct extends Element {
     return webElement.findElement(By.className("wpsc_product_name")).getText();
   }
 
-  public String getPrice() {
-    return webElement.findElement(By.xpath(
-        "//*[@class=\"checkout_cart\"]//tr[contains(@class,'product_row_')]/td/span[@class=\"pricedisplay\"]"))
-        .getText();
+  public double getPrice() {
+    return Double.parseDouble(
+        webElement.findElement(By.className("pricedisplay")).getText().replaceAll("\\$", ""));
   }
 
-  public String getTotalPrice() {
-    return webElement.findElement(By.xpath(
+  public double getTotalPrice() {
+    return Double.parseDouble(webElement.findElement(By.xpath(
         "//*[@class=\"checkout_cart\"]//tr[contains(@class,'product_row_')]/td/span[@class=\"pricedisplay\"]/span[@class=\"pricedisplay\"]"))
-        .getText();
+        .getText().replaceAll("\\$", ""));
   }
 
   public void remove() {

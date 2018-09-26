@@ -3,6 +3,7 @@ package com.gmail.shnapi007.pages;
 import com.gmail.shnapi007.core.webelements.Button;
 import com.gmail.shnapi007.core.webelements.CheckBox;
 import com.gmail.shnapi007.core.pagefactory.CustomFieldDecorator;
+import com.gmail.shnapi007.core.webelements.Input;
 import com.gmail.shnapi007.pages.base.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,10 +13,10 @@ import org.openqa.selenium.support.PageFactory;
 public class LogInPage extends BasePage {
 
   @FindBy(how = How.ID, using = "user_login")
-  private WebElement userLogin;
+  private Input userLogin;
 
   @FindBy(how = How.ID, using = "user_pass")
-  private WebElement userPassword;
+  private Input userPassword;
 
   @FindBy(how = How.ID, using = "rememberme")
   private CheckBox rememberMe;
@@ -23,13 +24,13 @@ public class LogInPage extends BasePage {
   @FindBy(how = How.ID, using = "wp-submit")
   private Button loginButton;
 
-  @FindBy(how = How.LINK_TEXT, using = "Register")
+  @FindBy(how = How.XPATH, using = "//*[@id=\"nav\"]/a[2]")
   private WebElement registerPage;
 
-  @FindBy(how = How.LINK_TEXT, using = "Lost your password?")
+  @FindBy(how = How.XPATH, using = "//*[@id=\"nav\"]/a[2]")
   private WebElement forgotPassword;
 
-  @FindBy(how = How.PARTIAL_LINK_TEXT, using = "Back to ONLINE STORE")
+  @FindBy(how = How.XPATH, using = "//*[@id=\"backtoblog\"]/a")
   private WebElement backToStore;
 
   public LogInPage() {
@@ -64,11 +65,11 @@ public class LogInPage extends BasePage {
     forgotPassword.click();
   }
 
-  public WebElement getUserLogin() {
+  public Input getUserLogin() {
     return userLogin;
   }
 
-  public WebElement getUserPassword() {
+  public Input getUserPassword() {
     return userPassword;
   }
 

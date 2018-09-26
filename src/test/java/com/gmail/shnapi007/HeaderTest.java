@@ -4,7 +4,9 @@ import com.gmail.shnapi007.bo.HeaderBO;
 import com.gmail.shnapi007.bo.MyAccountPageBO;
 import com.gmail.shnapi007.bo.ProductPageBO;
 import com.gmail.shnapi007.core.DriverManager;
+import com.gmail.shnapi007.core.webelements.Product;
 import io.qameta.allure.Description;
+import java.util.List;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -115,16 +117,24 @@ public class HeaderTest extends BaseTest {
   }
 
   @Test
-  @Description(value = "Login test")
-  public void loginTest() {
+  @Description(value = "Search test")
+  public void searchTest() {
     driver.get("http://store.demoqa.com/");
-    headerBo.clickMyAccount();
-    myAccountPageBO.typeLogin("serhii");
-    myAccountPageBO.typePassword("1234");
-    myAccountPageBO.rememberMe();
-    myAccountPageBO.login();
-    asserter.assertEquals(myAccountPageBO.getUserName(), "serhii", "Wrong user name url",
-        "User name url is correct");
+    String phrase = "iphone";
+    headerBo.searchProducts(phrase);
 
+    List<Product> products = productPageBO.getProducts();
+
+    for (Product product : products) {
+      System.out.println(product.getProductName());
+    }
+
+    boolean isProductFinded = products
+        .stream()
+        .anyMatch(p -> p.getProductName().toLowerCase().contains(phrase));
+
+    asserter.assertPass(isProductFinded, "Product with such phrase not founded",
+        "Product with such not founded");
   }
+
 }

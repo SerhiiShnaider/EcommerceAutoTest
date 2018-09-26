@@ -7,6 +7,7 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
@@ -18,20 +19,28 @@ public class CheckoutPage extends BasePage {
   @FindBy(how = How.XPATH, using = "//*[@class=\"yourtotal\"]/span")
   private WebElement subTotal;
 
-  @FindAll(@FindBy(how = How.XPATH, using =
-      "//*[@class=\"checkout_cart\" and child::node()]"))
+  @FindBys(@FindBy(how = How.XPATH, using =
+      "//*[@class=\"checkout_cart\"]//tr[contains(@class,'product_row_') and child::node()]"))
   private List<CheckoutProduct> products;
 
   public CheckoutPage() {
     PageFactory.initElements(new CustomFieldDecorator(driver), this);
   }
 
-  public String getPageTitle() {
+  public String getPageTitleText() {
     return pageTitle.getText();
   }
 
-  public String getSubTotal() {
+  public String getSubTotalText() {
     return subTotal.getText();
+  }
+
+  public WebElement getPageTitle() {
+    return pageTitle;
+  }
+
+  public WebElement getSubTotal() {
+    return subTotal;
   }
 
   public List<CheckoutProduct> getProducts() {

@@ -3,6 +3,7 @@ package com.gmail.shnapi007.pages;
 import com.gmail.shnapi007.core.pagefactory.CustomFieldDecorator;
 import com.gmail.shnapi007.core.webelements.Button;
 import com.gmail.shnapi007.core.webelements.CheckBox;
+import com.gmail.shnapi007.core.webelements.Input;
 import com.gmail.shnapi007.pages.base.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,10 +13,10 @@ import org.openqa.selenium.support.PageFactory;
 public class MyAccountPage extends BasePage {
 
   @FindBy(how = How.ID, using = "log")
-  private WebElement login;
+  private Input login;
 
   @FindBy(how = How.ID, using = "pwd")
-  private WebElement password;
+  private Input password;
 
   @FindBy(how = How.ID, using = "rememberme")
   private CheckBox rememberMe;
@@ -65,11 +66,11 @@ public class MyAccountPage extends BasePage {
   }
 
 
-  public WebElement getLogin() {
+  public Input getLogin() {
     return login;
   }
 
-  public WebElement getPassword() {
+  public Input getPassword() {
     return password;
   }
 

@@ -26,18 +26,6 @@ public class ProductPageBO extends BaseBO {
     productPage.switchToList();
   }
 
-  public void register() {
-    logger.info("Click on register");
-    highlight(productPage.getRegister());
-    productPage.register();
-  }
-
-  public void logIn() {
-    logger.info("Click on log in");
-    highlight(productPage.getLogIn());
-    productPage.logIn();
-  }
-
   public List<Product> getProducts() {
     return productPage.getProducts();
   }

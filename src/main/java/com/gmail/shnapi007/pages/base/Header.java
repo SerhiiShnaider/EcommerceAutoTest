@@ -1,5 +1,7 @@
 package com.gmail.shnapi007.pages.base;
 
+import com.gmail.shnapi007.core.pagefactory.CustomFieldDecorator;
+import com.gmail.shnapi007.core.webelements.Input;
 import com.google.common.base.MoreObjects;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -26,8 +28,8 @@ public class Header extends BasePage {
   @FindBy(how = How.XPATH, using = "//*[@id='account']/a")
   private WebElement myAccount;
 
-  @FindBy(how = How.NAME, using = "s")
-  private WebElement searchProducts;
+  @FindBy(how = How.CLASS_NAME, using = "searchform")
+  private Input searchProducts;
 
   // SUB-MENU
 
@@ -50,7 +52,7 @@ public class Header extends BasePage {
   private WebElement macBooks;
 
   public Header() {
-    PageFactory.initElements(driver, this);
+    PageFactory.initElements(new CustomFieldDecorator(driver), this);
   }
 
   public void home() {
@@ -118,7 +120,7 @@ public class Header extends BasePage {
     return allProduct;
   }
 
-  public WebElement getSearchProducts() {
+  public Input getSearchProducts() {
     return searchProducts;
   }
 

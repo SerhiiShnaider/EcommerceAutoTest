@@ -14,8 +14,8 @@ public class LogInPageBO extends BaseBO {
 
   public void typePassword(String password) {
     logger.info("Typing password");
-    highlight(logInPage.getUserLogin());
-    logInPage.typeLogin(password);
+    highlight(logInPage.getUserPassword());
+    logInPage.typePassword(password);
   }
 
   public void clickOnRememberMe() {
