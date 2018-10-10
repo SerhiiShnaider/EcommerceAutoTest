@@ -6,6 +6,13 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class InternetExplorerDriverData extends AbstractDriverData {
 
+  public InternetExplorerDriverData() {
+  }
+
+  public InternetExplorerDriverData(DesiredCapabilities driverCapability) {
+    super(driverCapability);
+  }
+
   @Override
   public String driverName() {
     logger.info("Get driver name");
@@ -21,6 +28,9 @@ public class InternetExplorerDriverData extends AbstractDriverData {
   @Override
   public WebDriver driver() {
     logger.info("Create internet explorer driver instance");
+    if (driverCapability != null) {
+      return new InternetExplorerDriver(driverCapability);
+    }
     DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
     capabilities
         .setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
